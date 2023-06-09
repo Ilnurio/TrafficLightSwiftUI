@@ -11,6 +11,7 @@
 		4621E7632A334163001C2589 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621E7622A334163001C2589 /* ContentView.swift */; };
 		4621E7652A334164001C2589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4621E7642A334164001C2589 /* Assets.xcassets */; };
 		4621E7682A334164001C2589 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4621E7672A334164001C2589 /* Preview Assets.xcassets */; };
+		4621E76F2A334293001C2589 /* LampSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4621E76E2A334293001C2589 /* LampSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4621E7622A334163001C2589 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4621E7642A334164001C2589 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4621E7672A334164001C2589 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4621E76E2A334293001C2589 /* LampSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				4621E7602A334163001C2589 /* TrafficLightSwiftUIApp.swift */,
 				4621E7622A334163001C2589 /* ContentView.swift */,
+				4621E76E2A334293001C2589 /* LampSwiftUIView.swift */,
 				4621E7642A334164001C2589 /* Assets.xcassets */,
 				4621E7662A334164001C2589 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				4621E7632A334163001C2589 /* ContentView.swift in Sources */,
 				4621E7612A334163001C2589 /* TrafficLightSwiftUIApp.swift in Sources */,
+				4621E76F2A334293001C2589 /* LampSwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

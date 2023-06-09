@@ -9,13 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            VStack {
+                Spacer()
+                Text("СВЕТОФОР")
+                    .padding()
+                    .background(.blue)
+                    .font(.title)
+                    .foregroundColor(Color.white)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.blue, lineWidth: 10))
+            
+                LampSwiftUIView(color: .red)
+                LampSwiftUIView(color: .yellow)
+                LampSwiftUIView(color: .green)
+                
+                Button { } label: {
+                    Text("START")
+                        .padding()
+                        .background(.blue)
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.blue, lineWidth: 10))
+                }
+                .padding()
+            }
         }
-        .padding()
     }
 }
 
