@@ -34,25 +34,26 @@ struct ContentView: View {
                     LampSwiftUIView(color: .yellow, opacity: currentLight == .yellow ? 1 : 0.3)
                     LampSwiftUIView(color: .green, opacity: currentLight == .green ? 1 : 0.3)
                 }
+
                 
-                Button {
+                Button(action: {
                     if buttonTitle == "START" {
                         buttonTitle = "NEXT"
                     }
                     buttonTapped()
+                })
+                {
+                    Text(buttonTitle)
+                        .padding()
+                        .background(LinearGradient(gradient: Gradient(colors: [Color.red,Color.yellow, Color.green]), startPoint: .leading, endPoint: .trailing))
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.black, lineWidth: 10)
+                        )
                 }
-            label: {
-                Text(buttonTitle)
-                    .padding()
-                    .background(LinearGradient(gradient: Gradient(colors: [Color.red,Color.yellow, Color.green]), startPoint: .leading, endPoint: .trailing))
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.blue, lineWidth: 10)
-                    )
-            }
-            .padding()
+                .padding()
             }
         }
     }
