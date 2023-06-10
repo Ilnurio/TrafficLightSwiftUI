@@ -8,15 +8,16 @@
 import SwiftUI
 
 enum CurrentLight {
-    case red, yellow, green
+    case alphaRed,red, yellow, green
 }
 
 struct ContentView: View {
-    @State private var currentLight: CurrentLight = .red
+    @State private var currentLight: CurrentLight = .alphaRed
     @State private var buttonTitle = "START"
     
     private func buttonTapped() {
         switch currentLight {
+        case .alphaRed: currentLight = .red
         case .red: currentLight = .yellow
         case .yellow: currentLight = .green
         case .green: currentLight = .red
@@ -28,7 +29,7 @@ struct ContentView: View {
             Color.black
                 .ignoresSafeArea()
             
-            VStack(alignment: .center, spacing: 10) {
+            VStack(alignment: .center, spacing: 20) {
                 Text("СВЕТОФОР")
                     .padding(5)
                     .background(.blue)
