@@ -15,11 +15,22 @@ struct ContentView: View {
     @State private var currentLight: CurrentLight = .red
     @State private var buttonTitle = "START"
     
+    private func buttonTapped() {
+        switch currentLight {
+        case .red: currentLight = .yellow
+        case .yellow: currentLight = .green
+        case .green: currentLight = .red
+        }
+    }
+}
+    
+extension ContentView {
     var body: some View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            VStack(alignment: .center, spacing: 30) {
+            
+            VStack(alignment: .center, spacing: 10) {
                 Text("СВЕТОФОР")
                     .padding(5)
                     .background(.blue)
@@ -35,23 +46,11 @@ struct ContentView: View {
                     LampSwiftUIView(color: .green, opacity: currentLight == .green ? 1 : 0.3)
                 }
 
-                
-                Button(action: {
+                ChangeColorButton(title: buttonTitle) {
                     if buttonTitle == "START" {
                         buttonTitle = "NEXT"
                     }
                     buttonTapped()
-                })
-                {
-                    Text(buttonTitle)
-                        .padding()
-                        .background(LinearGradient(gradient: Gradient(colors: [Color.red,Color.yellow, Color.green]), startPoint: .leading, endPoint: .trailing))
-                        .foregroundColor(.white)
-                        .font(.largeTitle)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.black, lineWidth: 10)
-                        )
                 }
                 .padding()
             }
@@ -62,16 +61,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
- // MARK: - methods for buttonTapped
-extension ContentView {
-    private func buttonTapped() {
-        switch currentLight {
-        case .red: currentLight = .yellow
-        case .yellow: currentLight = .green
-        case .green: currentLight = .red
-        }
     }
 }
