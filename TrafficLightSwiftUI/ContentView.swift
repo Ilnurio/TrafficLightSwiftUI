@@ -32,13 +32,15 @@ struct ContentView: View {
             VStack(alignment: .center, spacing: 20) {
                 Text("СВЕТОФОР")
                     .padding(5)
-                    .background(.blue)
                     .font(Font.title.weight(.bold))
                     .padding()
                     .foregroundColor(Color.white)
-                    .overlay(RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.blue, lineWidth: 10)
-                    )
+                    .background(.black)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+                    .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .stroke(Color.white, lineWidth: 4))
+            
                 VStack() {
                     LampSwiftUIView(color: .red, opacity: currentLight == .red ? 1 : 0.3)
                     LampSwiftUIView(color: .yellow, opacity: currentLight == .yellow ? 1 : 0.3)
