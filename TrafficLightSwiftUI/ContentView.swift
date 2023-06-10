@@ -22,9 +22,7 @@ struct ContentView: View {
         case .green: currentLight = .red
         }
     }
-}
     
-extension ContentView {
     var body: some View {
         ZStack {
             Color.black
@@ -45,7 +43,7 @@ extension ContentView {
                     LampSwiftUIView(color: .yellow, opacity: currentLight == .yellow ? 1 : 0.3)
                     LampSwiftUIView(color: .green, opacity: currentLight == .green ? 1 : 0.3)
                 }
-
+                
                 ChangeColorButton(title: buttonTitle) {
                     if buttonTitle == "START" {
                         buttonTitle = "NEXT"
@@ -57,7 +55,7 @@ extension ContentView {
         }
     }
 }
-
+    
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
