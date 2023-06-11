@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ChangeColorButton: View {
+struct ChangeColorView: View {
     let title: String
     let action: () -> Void
     
@@ -19,7 +19,11 @@ struct ChangeColorButton: View {
                 .foregroundColor(Color.white)
         }
         .frame(width: 150, height: 60)
-        .background(LinearGradient(gradient: Gradient(colors: [Color.red,Color.yellow, Color.green]), startPoint: .leading, endPoint: .trailing))
+        .background(
+            LinearGradient(
+                gradient: Gradient(
+                    colors: [Color.red,Color.yellow, Color.green]),
+                startPoint: .leading, endPoint: .trailing))
         .foregroundColor(.white)
         .cornerRadius(20)
         .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous)
@@ -29,6 +33,6 @@ struct ChangeColorButton: View {
 
 struct ChangeColorButton_Previews: PreviewProvider {
     static var previews: some View {
-        ChangeColorButton(title: "START", action: {})
+        ChangeColorView(title: "START", action: {})
     }
 }

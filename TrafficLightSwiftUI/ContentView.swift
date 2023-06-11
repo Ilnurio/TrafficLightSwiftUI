@@ -42,12 +42,13 @@ struct ContentView: View {
                         .stroke(Color.white, lineWidth: 4))
             
                 VStack() {
-                    LampSwiftUIView(color: .red, opacity: currentLight == .red ? 1 : 0.3)
+                    LampSwiftUIView(
+                        color: .red, opacity: currentLight == .red ? 1 : 0.3)
                     LampSwiftUIView(color: .yellow, opacity: currentLight == .yellow ? 1 : 0.3)
                     LampSwiftUIView(color: .green, opacity: currentLight == .green ? 1 : 0.3)
                 }
                 
-                ChangeColorButton(title: buttonTitle) {
+                ChangeColorView(title: buttonTitle) {
                     if buttonTitle == "START" {
                         buttonTitle = "NEXT"
                     }

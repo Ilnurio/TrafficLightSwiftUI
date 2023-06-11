@@ -16,8 +16,7 @@ struct LampSwiftUIView: View {
             .foregroundColor(color)
             .frame(width: 150, height: 150)
             .opacity(opacity)
-            .overlay(Circle()
-                .stroke(Color.white, lineWidth: 4))
+            .overlay(Circle().stroke(Color.white, lineWidth: 4))
     }
 }
 
