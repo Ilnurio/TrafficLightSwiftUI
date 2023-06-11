@@ -26,8 +26,9 @@ struct ChangeColorView: View {
                 startPoint: .leading, endPoint: .trailing))
         .foregroundColor(.white)
         .cornerRadius(20)
-        .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous)
-            .stroke(Color.white, lineWidth: 4))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.white, lineWidth: 4))
     }
 }
 

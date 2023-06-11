@@ -15,21 +15,12 @@ struct ContentView: View {
     @State private var currentLight: CurrentLight = .alphaRed
     @State private var buttonTitle = "START"
     
-    private func buttonTapped() {
-        switch currentLight {
-        case .alphaRed: currentLight = .red
-        case .red: currentLight = .yellow
-        case .yellow: currentLight = .green
-        case .green: currentLight = .red
-        }
-    }
-    
     var body: some View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
             
-            VStack(alignment: .center, spacing: 20) {
+            VStack(spacing: 20) {
                 Text("СВЕТОФОР")
                     .padding(5)
                     .font(Font.title.weight(.bold))
@@ -43,9 +34,17 @@ struct ContentView: View {
             
                 VStack() {
                     LampSwiftUIView(
-                        color: .red, opacity: currentLight == .red ? 1 : 0.3)
-                    LampSwiftUIView(color: .yellow, opacity: currentLight == .yellow ? 1 : 0.3)
-                    LampSwiftUIView(color: .green, opacity: currentLight == .green ? 1 : 0.3)
+                        color: .red,
+                        opacity: currentLight == .red ? 1 : 0.3
+                    )
+                    LampSwiftUIView(
+                        color: .yellow,
+                        opacity: currentLight == .yellow ? 1 : 0.3
+                    )
+                    LampSwiftUIView(
+                        color: .green,
+                        opacity: currentLight == .green ? 1 : 0.3
+                    )
                 }
                 
                 ChangeColorView(title: buttonTitle) {
@@ -56,6 +55,15 @@ struct ContentView: View {
                 }
                 .padding()
             }
+        }
+    }
+    
+    private func buttonTapped() {
+        switch currentLight {
+        case .alphaRed: currentLight = .red
+        case .red: currentLight = .yellow
+        case .yellow: currentLight = .green
+        case .green: currentLight = .red
         }
     }
 }
